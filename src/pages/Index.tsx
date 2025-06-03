@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -8,11 +9,14 @@ import {
   Clock, 
   CheckCircle, 
   Users, 
-  TrendingUp,
+  FileText,
   Phone,
   Mail,
   MapPin,
-  Star
+  Star,
+  Archive,
+  AlertTriangle,
+  Settings
 } from "lucide-react";
 
 const Index = () => {
@@ -23,10 +27,17 @@ const Index = () => {
     window.open(whatsappUrl, '_blank');
   };
 
+  const handleContactClick = () => {
+    const phoneNumber = "5491149383569";
+    const message = "Hola necesito presupuesto para múltiples terminales";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+      <header className="bg-white shadow-sm sticky top-0 z-50 border-b border-blue-100">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
@@ -35,11 +46,11 @@ const Index = () => {
             </div>
             <nav className="hidden md:flex items-center space-x-8">
               <a href="#inicio" className="text-gray-600 hover:text-blue-600 transition-colors">Inicio</a>
-              <a href="#beneficios" className="text-gray-600 hover:text-blue-600 transition-colors">Beneficios</a>
-              <a href="#como-funciona" className="text-gray-600 hover:text-blue-600 transition-colors">Cómo Funciona</a>
+              <a href="#servicios" className="text-gray-600 hover:text-blue-600 transition-colors">Servicios</a>
+              <a href="#precios" className="text-gray-600 hover:text-blue-600 transition-colors">Precios</a>
               <a href="#contacto" className="text-gray-600 hover:text-blue-600 transition-colors">Contacto</a>
             </nav>
-            <Button className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700">
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white">
               Comenzar Ahora
             </Button>
           </div>
@@ -52,7 +63,7 @@ const Index = () => {
           <Badge className="mb-6 bg-blue-100 text-blue-800 hover:bg-blue-100">
             🚀 Revoluciona tu negocio
           </Badge>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text text-transparent animate-fade-in">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-blue-600 animate-fade-in">
             Controla Todas Tus Ventas con Tarjetas
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
@@ -61,7 +72,7 @@ const Index = () => {
           <div className="flex justify-center mb-12">
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-lg px-8 py-4"
+              className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4"
               onClick={handleWhatsAppClick}
             >
               Probar el Servicio
@@ -70,111 +81,87 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 px-6 bg-white/50">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <div className="hover-scale">
-              <div className="text-4xl font-bold text-blue-600 mb-2">+10,000</div>
-              <div className="text-gray-600">Negocios Activos</div>
-            </div>
-            <div className="hover-scale">
-              <div className="text-4xl font-bold text-green-600 mb-2">$2.5M</div>
-              <div className="text-gray-600">Procesados Mensualmente</div>
-            </div>
-            <div className="hover-scale">
-              <div className="text-4xl font-bold text-purple-600 mb-2">99.9%</div>
-              <div className="text-gray-600">Tiempo de Actividad</div>
-            </div>
-            <div className="hover-scale">
-              <div className="text-4xl font-bold text-orange-600 mb-2">24/7</div>
-              <div className="text-gray-600">Soporte Técnico</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section id="beneficios" className="py-20 px-6">
+      {/* Services Section */}
+      <section id="servicios" className="py-20 px-6 bg-blue-50">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
-              ¿Por Qué Elegir TarjetaControl?
+              Servicios
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Optimiza tu negocio con herramientas profesionales diseñadas para maximizar tus ventas y minimizar riesgos
+              Servicios profesionales especializados en el control y gestión de tarjetas de crédito y débito
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="p-8 hover:shadow-lg transition-all duration-300 hover-scale border-0 bg-gradient-to-br from-blue-50 to-blue-100">
+            <Card className="p-8 hover:shadow-lg transition-all duration-300 border-blue-200 bg-white">
               <CardContent className="p-0">
                 <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6">
                   <BarChart3 className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-800">Análisis en Tiempo Real</h3>
+                <h3 className="text-xl font-bold mb-4 text-gray-800">Control Diario de Cobranzas</h3>
                 <p className="text-gray-600">
-                  Monitorea todas tus transacciones al instante con dashboards intuitivos y reportes detallados
+                  Monitoreo diario de todas las liquidaciones y cobranzas de tus ventas con tarjetas
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="p-8 hover:shadow-lg transition-all duration-300 hover-scale border-0 bg-gradient-to-br from-green-50 to-green-100">
+            <Card className="p-8 hover:shadow-lg transition-all duration-300 border-blue-200 bg-white">
               <CardContent className="p-0">
-                <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mb-6">
-                  <Shield className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-800">Máxima Seguridad</h3>
-                <p className="text-gray-600">
-                  Protección bancaria con encriptación de datos y cumplimiento de estándares PCI DSS
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="p-8 hover:shadow-lg transition-all duration-300 hover-scale border-0 bg-gradient-to-br from-purple-50 to-purple-100">
-              <CardContent className="p-0">
-                <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6">
                   <Clock className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-800">Configuración Rápida</h3>
+                <h3 className="text-xl font-bold mb-4 text-gray-800">Control Periódico de Cupones</h3>
                 <p className="text-gray-600">
-                  Comienza a operar en menos de 5 minutos con nuestra integración automatizada
+                  Verificación y seguimiento periódico de todos los cupones procesados
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="p-8 hover:shadow-lg transition-all duration-300 hover-scale border-0 bg-gradient-to-br from-orange-50 to-orange-100">
+            <Card className="p-8 hover:shadow-lg transition-all duration-300 border-blue-200 bg-white">
               <CardContent className="p-0">
-                <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mb-6">
-                  <TrendingUp className="h-8 w-8 text-white" />
+                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6">
+                  <Settings className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-800">Aumenta tus Ventas</h3>
+                <h3 className="text-xl font-bold mb-4 text-gray-800">Configuración de Reportes a Medida</h3>
                 <p className="text-gray-600">
-                  Optimiza tu tasa de conversión con herramientas inteligentes de análisis de ventas
+                  Reportes personalizados según las necesidades específicas de tu negocio
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="p-8 hover:shadow-lg transition-all duration-300 hover-scale border-0 bg-gradient-to-br from-teal-50 to-teal-100">
+            <Card className="p-8 hover:shadow-lg transition-all duration-300 border-blue-200 bg-white">
               <CardContent className="p-0">
-                <div className="w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6">
+                  <Archive className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-gray-800">Guarda de Cupones</h3>
+                <p className="text-gray-600">
+                  Archivo seguro y organizado de todos los cupones y documentación
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="p-8 hover:shadow-lg transition-all duration-300 border-blue-200 bg-white">
+              <CardContent className="p-0">
+                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6">
+                  <AlertTriangle className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-gray-800">Gestión de Reclamos e Incidentes</h3>
+                <p className="text-gray-600">
+                  Manejo profesional de reclamos ante las emisoras de tarjetas de crédito
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="p-8 hover:shadow-lg transition-all duration-300 border-blue-200 bg-white">
+              <CardContent className="p-0">
+                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6">
                   <Users className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-800">Gestión de Equipos</h3>
+                <h3 className="text-xl font-bold mb-4 text-gray-800">Asesoramiento AHORA 3/6/12/18</h3>
                 <p className="text-gray-600">
-                  Administra permisos y accesos para tu equipo con roles personalizables
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="p-8 hover:shadow-lg transition-all duration-300 hover-scale border-0 bg-gradient-to-br from-pink-50 to-pink-100">
-              <CardContent className="p-0">
-                <div className="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center mb-6">
-                  <CreditCard className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-800">Múltiples Procesadores</h3>
-                <p className="text-gray-600">
-                  Conecta con todos los principales procesadores de pago en una sola plataforma
+                  Consultoría especializada en temas relacionados con tarjetas de crédito
                 </p>
               </CardContent>
             </Card>
@@ -182,54 +169,93 @@ const Index = () => {
         </div>
       </section>
 
-      {/* How it Works Section */}
-      <section id="como-funciona" className="py-20 px-6 bg-gradient-to-r from-blue-900 to-green-900 text-white">
+      {/* Pricing Section */}
+      <section id="precios" className="py-20 px-6">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Cómo Funciona
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
+              Precios
             </h2>
-            <p className="text-xl opacity-90 max-w-3xl mx-auto">
-              Tres simples pasos para revolucionar el control de tus ventas con tarjetas
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Planes transparentes y accesibles para tu negocio
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl font-bold">1</span>
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Regístrate</h3>
-              <p className="opacity-90">
-                Crea tu cuenta gratuita y conecta tus procesadores de pago en minutos
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl font-bold">2</span>
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Configura</h3>
-              <p className="opacity-90">
-                Personaliza tus dashboards y alertas según las necesidades de tu negocio
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl font-bold">3</span>
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Controla</h3>
-              <p className="opacity-90">
-                Monitorea y optimiza todas tus ventas desde una plataforma centralizada
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Card className="p-8 bg-white border-2 border-blue-200">
+              <CardContent className="p-0 text-center">
+                <h3 className="text-2xl font-bold mb-4 text-gray-800">1 Terminal</h3>
+                <div className="mb-6">
+                  <span className="text-5xl font-bold text-blue-600">$10,000</span>
+                  <span className="text-gray-600 ml-2">ARS/mes</span>
+                </div>
+                <ul className="space-y-3 mb-8 text-left">
+                  <li className="flex items-center">
+                    <CheckCircle className="h-5 w-5 text-blue-600 mr-3" />
+                    <span>Todas las tarjetas de débito y crédito</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="h-5 w-5 text-blue-600 mr-3" />
+                    <span>Control diario de cobranzas</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="h-5 w-5 text-blue-600 mr-3" />
+                    <span>Reportes personalizados</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="h-5 w-5 text-blue-600 mr-3" />
+                    <span>Soporte especializado</span>
+                  </li>
+                </ul>
+                <Button 
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+                  onClick={handleWhatsAppClick}
+                >
+                  Empezar Ahora
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="p-8 bg-blue-50 border-2 border-blue-300">
+              <CardContent className="p-0 text-center">
+                <h3 className="text-2xl font-bold mb-4 text-gray-800">Múltiples Terminales</h3>
+                <div className="mb-6">
+                  <span className="text-3xl font-bold text-blue-600">Presupuesto</span>
+                  <span className="text-gray-600 ml-2">personalizado</span>
+                </div>
+                <ul className="space-y-3 mb-8 text-left">
+                  <li className="flex items-center">
+                    <CheckCircle className="h-5 w-5 text-blue-600 mr-3" />
+                    <span>Todo lo del plan básico</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="h-5 w-5 text-blue-600 mr-3" />
+                    <span>Gestión centralizada</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="h-5 w-5 text-blue-600 mr-3" />
+                    <span>Reportes consolidados</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="h-5 w-5 text-blue-600 mr-3" />
+                    <span>Descuentos por volumen</span>
+                  </li>
+                </ul>
+                <Button 
+                  variant="outline" 
+                  className="w-full border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+                  onClick={handleContactClick}
+                >
+                  Contáctanos para Presupuesto
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 px-6 bg-gray-50">
+      <section className="py-20 px-6 bg-blue-50">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
@@ -241,11 +267,11 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="p-8 bg-white border-0 shadow-lg">
+            <Card className="p-8 bg-white border-blue-200">
               <CardContent className="p-0">
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                    <Star key={i} className="h-5 w-5 text-blue-400 fill-current" />
                   ))}
                 </div>
                 <p className="text-gray-600 mb-6">
@@ -263,18 +289,18 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="p-8 bg-white border-0 shadow-lg">
+            <Card className="p-8 bg-white border-blue-200">
               <CardContent className="p-0">
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                    <Star key={i} className="h-5 w-5 text-blue-400 fill-current" />
                   ))}
                 </div>
                 <p className="text-gray-600 mb-6">
                   "La seguridad y los reportes en tiempo real son exactamente lo que necesitábamos. Excelente soporte técnico."
                 </p>
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
                     <span className="text-white font-bold">JR</span>
                   </div>
                   <div>
@@ -285,18 +311,18 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="p-8 bg-white border-0 shadow-lg">
+            <Card className="p-8 bg-white border-blue-200">
               <CardContent className="p-0">
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                    <Star key={i} className="h-5 w-5 text-blue-400 fill-current" />
                   ))}
                 </div>
                 <p className="text-gray-600 mb-6">
                   "Implementación súper rápida y resultados inmediatos. No podríamos operar sin TarjetaControl ahora."
                 </p>
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
                     <span className="text-white font-bold">AS</span>
                   </div>
                   <div>
@@ -311,7 +337,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-blue-600 to-green-600 text-white">
+      <section className="py-20 px-6 bg-blue-600 text-white">
         <div className="container mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             ¿Listo para Transformar tu Negocio?
@@ -331,59 +357,59 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer id="contacto" className="bg-gray-900 text-white py-16 px-6">
+      <footer id="contacto" className="bg-white text-gray-800 py-16 px-6 border-t border-blue-100">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center space-x-2 mb-6">
-                <CreditCard className="h-8 w-8 text-blue-400" />
+                <CreditCard className="h-8 w-8 text-blue-600" />
                 <span className="text-2xl font-bold">TarjetaControl</span>
               </div>
-              <p className="text-gray-400 mb-4">
+              <p className="text-gray-600 mb-4">
                 La plataforma líder para el control y análisis de ventas con tarjetas de crédito y débito.
               </p>
             </div>
             
             <div>
               <h3 className="text-lg font-bold mb-4">Producto</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Características</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Precios</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Integraciones</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">API</a></li>
+              <ul className="space-y-2 text-gray-600">
+                <li><a href="#" className="hover:text-blue-600 transition-colors">Características</a></li>
+                <li><a href="#" className="hover:text-blue-600 transition-colors">Precios</a></li>
+                <li><a href="#" className="hover:text-blue-600 transition-colors">Integraciones</a></li>
+                <li><a href="#" className="hover:text-blue-600 transition-colors">API</a></li>
               </ul>
             </div>
             
             <div>
               <h3 className="text-lg font-bold mb-4">Soporte</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Centro de Ayuda</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Documentación</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Estado del Servicio</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contacto</a></li>
+              <ul className="space-y-2 text-gray-600">
+                <li><a href="#" className="hover:text-blue-600 transition-colors">Centro de Ayuda</a></li>
+                <li><a href="#" className="hover:text-blue-600 transition-colors">Documentación</a></li>
+                <li><a href="#" className="hover:text-blue-600 transition-colors">Estado del Servicio</a></li>
+                <li><a href="#" className="hover:text-blue-600 transition-colors">Contacto</a></li>
               </ul>
             </div>
             
             <div>
               <h3 className="text-lg font-bold mb-4">Contacto</h3>
-              <div className="space-y-3 text-gray-400">
+              <div className="space-y-3 text-gray-600">
                 <div className="flex items-center">
-                  <Phone className="h-5 w-5 mr-3" />
-                  <span>+1 (555) 123-4567</span>
+                  <Phone className="h-5 w-5 mr-3 text-blue-600" />
+                  <span>+54 9 11 4938-3569</span>
                 </div>
                 <div className="flex items-center">
-                  <Mail className="h-5 w-5 mr-3" />
+                  <Mail className="h-5 w-5 mr-3 text-blue-600" />
                   <span>info@tarjetacontrol.com</span>
                 </div>
                 <div className="flex items-center">
-                  <MapPin className="h-5 w-5 mr-3" />
+                  <MapPin className="h-5 w-5 mr-3 text-blue-600" />
                   <span>Ciudad de México, México</span>
                 </div>
               </div>
             </div>
           </div>
           
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
+          <div className="border-t border-blue-100 pt-8 text-center text-gray-600">
             <p>&copy; 2024 TarjetaControl. Todos los derechos reservados.</p>
           </div>
         </div>

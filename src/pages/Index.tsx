@@ -41,8 +41,7 @@ const Index = () => {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <CreditCard className="h-8 w-8 text-blue-600" />
-              <span className="text-2xl font-bold text-gray-800">TarjetaControl</span>
+              <img src="/lovable-uploads/3b90bb51-239a-4c81-b555-a70875deccb6.png" alt="TarjetaControl" className="h-8" />
             </div>
             <nav className="hidden md:flex items-center space-x-8">
               <a href="#inicio" className="text-gray-600 hover:text-blue-600 transition-colors">Inicio</a>
@@ -50,7 +49,10 @@ const Index = () => {
               <a href="#precios" className="text-gray-600 hover:text-blue-600 transition-colors">Precios</a>
               <a href="#contacto" className="text-gray-600 hover:text-blue-600 transition-colors">Contacto</a>
             </nav>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+            <Button 
+              className="bg-blue-600 hover:bg-blue-700 text-white"
+              onClick={handleWhatsAppClick}
+            >
               Comenzar Ahora
             </Button>
           </div>
@@ -345,12 +347,13 @@ const Index = () => {
           <p className="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
             Únete a miles de empresarios que ya optimizaron sus ventas con TarjetaControl
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4">
-              Comenzar Prueba Gratuita
-            </Button>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10 text-lg px-8 py-4">
-              Hablar con un Experto
+          <div className="flex justify-center">
+            <Button 
+              size="lg" 
+              className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4"
+              onClick={handleWhatsAppClick}
+            >
+              Comenzar Ahora!
             </Button>
           </div>
         </div>
@@ -358,59 +361,11 @@ const Index = () => {
 
       {/* Footer */}
       <footer id="contacto" className="bg-white text-gray-800 py-16 px-6 border-t border-blue-100">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-6">
-                <CreditCard className="h-8 w-8 text-blue-600" />
-                <span className="text-2xl font-bold">TarjetaControl</span>
-              </div>
-              <p className="text-gray-600 mb-4">
-                La plataforma líder para el control y análisis de ventas con tarjetas de crédito y débito.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-bold mb-4">Producto</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li><a href="#" className="hover:text-blue-600 transition-colors">Características</a></li>
-                <li><a href="#" className="hover:text-blue-600 transition-colors">Precios</a></li>
-                <li><a href="#" className="hover:text-blue-600 transition-colors">Integraciones</a></li>
-                <li><a href="#" className="hover:text-blue-600 transition-colors">API</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-bold mb-4">Soporte</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li><a href="#" className="hover:text-blue-600 transition-colors">Centro de Ayuda</a></li>
-                <li><a href="#" className="hover:text-blue-600 transition-colors">Documentación</a></li>
-                <li><a href="#" className="hover:text-blue-600 transition-colors">Estado del Servicio</a></li>
-                <li><a href="#" className="hover:text-blue-600 transition-colors">Contacto</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-bold mb-4">Contacto</h3>
-              <div className="space-y-3 text-gray-600">
-                <div className="flex items-center">
-                  <Phone className="h-5 w-5 mr-3 text-blue-600" />
-                  <span>+54 9 11 4938-3569</span>
-                </div>
-                <div className="flex items-center">
-                  <Mail className="h-5 w-5 mr-3 text-blue-600" />
-                  <span>info@tarjetacontrol.com</span>
-                </div>
-                <div className="flex items-center">
-                  <MapPin className="h-5 w-5 mr-3 text-blue-600" />
-                  <span>Ciudad de México, México</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="border-t border-blue-100 pt-8 text-center text-gray-600">
-            <p>&copy; 2024 TarjetaControl. Todos los derechos reservados.</p>
+        <div className="container mx-auto text-center">
+          <div className="space-y-4 text-gray-600">
+            <p>&copy; TARJETACONTROL.COM</p>
+            <p>info@tarjetacontrol.com</p>
+            <p>Teléfono: (011) 4938-3569</p>
           </div>
         </div>
       </footer>

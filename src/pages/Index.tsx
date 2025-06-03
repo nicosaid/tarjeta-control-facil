@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -17,6 +16,13 @@ import {
 } from "lucide-react";
 
 const Index = () => {
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "5491149383569";
+    const message = "Hola quiero probar el servicio de tarjeta control";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
       {/* Header */}
@@ -50,29 +56,16 @@ const Index = () => {
             Controla Todas Tus Ventas con Tarjetas
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-            La plataforma más completa para gestionar y analizar todas tus transacciones con tarjetas de crédito y débito en tiempo real
+            Nuestro servicio informa diariamente las liquidaciones, cobranzas, rechazos y contracargos, ayudando al comercio a poseer información exacta y veraz
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button size="lg" className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-lg px-8 py-4">
-              Empezar Gratis
+          <div className="flex justify-center mb-12">
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-lg px-8 py-4"
+              onClick={handleWhatsAppClick}
+            >
+              Probar el Servicio
             </Button>
-            <Button variant="outline" size="lg" className="border-blue-600 text-blue-600 hover:bg-blue-50 text-lg px-8 py-4">
-              Ver Demo
-            </Button>
-          </div>
-          <div className="flex items-center justify-center space-x-6 text-sm text-gray-500">
-            <div className="flex items-center">
-              <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-              Sin comisiones ocultas
-            </div>
-            <div className="flex items-center">
-              <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-              Configuración en 5 minutos
-            </div>
-            <div className="flex items-center">
-              <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-              Soporte 24/7
-            </div>
           </div>
         </div>
       </section>

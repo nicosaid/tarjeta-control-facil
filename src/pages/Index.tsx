@@ -308,7 +308,7 @@ const Index = () => {
                   ))}
                 </div>
                 <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">
-                  "TarjetaControl nos ayudó a aumentar nuestras ventas un 30% en los primeros 3 meses. La plataforma es increíblemente fácil de usar."
+                  "Gracias a TarjetaControl puedo saber cuanto vendimos con cada tarjeta!"
                 </p>
                 <div className="flex items-center">
                   <div className="w-10 sm:w-12 h-10 sm:h-12 bg-blue-600 rounded-full flex items-center justify-center mr-3 sm:mr-4">

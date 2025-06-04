@@ -53,13 +53,13 @@ const Index = () => {
 
       {/* Header */}
       <header className="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50 border-b border-blue-100">
-        <div className="container mx-auto px-4 sm:px-6 py-4">
+        <div className="container mx-auto px-4 sm:px-6 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <img 
                 src="/lovable-uploads/65f1c437-fb99-471f-a8c9-eef0dc3fb87c.png" 
                 alt="TarjetaControl" 
-                className="h-12 sm:h-14 md:h-16 hover:scale-105 transition-transform duration-300" 
+                className="h-16 sm:h-18 md:h-20 hover:scale-105 transition-transform duration-300" 
               />
             </div>
             <nav className="hidden md:flex items-center space-x-8">

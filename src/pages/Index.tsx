@@ -53,13 +53,13 @@ const Index = () => {
 
       {/* Header */}
       <header className="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50 border-b border-blue-100">
-        <div className="container mx-auto px-4 sm:px-6 py-3">
+        <div className="container mx-auto px-4 sm:px-6 py-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <img 
                 src="/lovable-uploads/65f1c437-fb99-471f-a8c9-eef0dc3fb87c.png" 
                 alt="TarjetaControl" 
-                className="h-12 sm:h-14 md:h-16 hover:scale-105 transition-transform duration-300" 
+                className="h-10 sm:h-12 md:h-12 hover:scale-105 transition-transform duration-300" 
               />
             </div>
             <nav className="hidden md:flex items-center space-x-8">
@@ -91,7 +91,7 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section id="inicio" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 relative">
+      <section id="inicio" className="py-20 sm:py-24 md:py-32 lg:py-40 px-4 sm:px-6 relative">
         <div className="container mx-auto text-center relative z-10">
           <Badge className="mb-4 sm:mb-6 bg-blue-100 text-blue-800 hover:bg-blue-100 text-sm sm:text-base animate-fade-in">
             🚀 Revoluciona tu negocio
